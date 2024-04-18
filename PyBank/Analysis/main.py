@@ -72,6 +72,14 @@ avg_monthly_change = sum(monthly_change) / len(monthly_change)
 rounded_avg_monthly_change = round(avg_monthly_change, 2)
 #print(rounded_avg_monthly_change)            
 
+#printing to terminal
+print("Financial Analysis")
+print("----------------------------")
+print("Total Months: " + f"{row_count}")
+print("Total: " + f"${total_net}")
+print("Average Change: " + f"${rounded_avg_monthly_change}")
+print("Greatest Increase in Profits: " + f"{great_inc_date} (${great_inc_change})")
+print("Greatest Decrease in Profits: " + f"{great_dec_date} (${great_dec_change})")
 
 #module 3.2 slides/activities - first attempt
 output_file = os.path.join('PyBank','Analysis','results.csv')
