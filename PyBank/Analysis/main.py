@@ -31,4 +31,3 @@ with open(csvpath) as csvfile:
     for row in csv.reader(csvfile):
         total_net +=int(row[1])
     print(f"Total: ${total_net}")
-
