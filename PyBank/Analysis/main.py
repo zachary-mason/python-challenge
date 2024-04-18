@@ -82,9 +82,9 @@ print("Greatest Increase in Profits: " + f"{great_inc_date} (${great_inc_change}
 print("Greatest Decrease in Profits: " + f"{great_dec_date} (${great_dec_change})")
 
 #module 3.2 slides/activities - first attempt
-output_file = os.path.join('PyBank','Analysis','results.csv')
-with open(output_file, 'w') as csvfile:
-    results_file = csv.writer(csvfile, delimiter=',')
+output_file = os.path.join('PyBank','Analysis','analysis.txt')
+with open(output_file, 'w') as txtfile:
+    results_file = csv.writer(txtfile, delimiter=',')
     results_file.writerow(["Financial Analysis"])
     results_file.writerow(["----------------------------"])
     results_file.writerow(["Total Months: " + f"{row_count}"])
