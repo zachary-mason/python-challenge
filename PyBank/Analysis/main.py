@@ -27,8 +27,7 @@ with open(csvpath) as csvfile:
     #had some help from Xpert learning assistance here
     # and the avg change/monthly change
     #counting the rows and total profit/loss 
-    #as it goes down the file
-    
+    #as it goes down the file    
     for row in csvreader:
         row_count +=1
         total_net += int(row[1])
@@ -48,29 +47,13 @@ with open(csvpath) as csvfile:
                 #great_inc_change = row[1]
 
         prev_prof_loss = int(row[1])
-    
-    #testing the great inc/dec
-        #print(great_inc_change)
-        #print(great_inc_date)
-        #print(great_dec_change)
-        #print(great_dec_date)
-    
-    #test print for total number of 
-    # months/rows in data and total net
-    #print(f"Total Months: {row_count}")
-    #print(f"Total: ${total_net}")
+       
 
-    #for row in csv.reader(csvfile):
-    #    if row_count > 1:
-    #       month_change = int(row[1]) - prev_prof_loss
-    #       monthly_change.append(monthly_change)
-    
-    #   prev_prof_loss = int(row[1])
 
 #average monthly change set up and round to 2 decimal points
-avg_monthly_change = sum(monthly_change) / len(monthly_change)
-rounded_avg_monthly_change = round(avg_monthly_change, 2)
-#print(rounded_avg_monthly_change)            
+    avg_monthly_change = sum(monthly_change) / len(monthly_change)
+    rounded_avg_monthly_change = round(avg_monthly_change, 2)
+#print(f"{rounded_avg_monthly_change}")            
 
 #printing to terminal
 print("Financial Analysis")
@@ -82,6 +65,7 @@ print("Greatest Increase in Profits: " + f"{great_inc_date} (${great_inc_change}
 print("Greatest Decrease in Profits: " + f"{great_dec_date} (${great_dec_change})")
 
 #module 3.2 slides/activities - first attempt
+#output text file with results matching module instructions
 output_file = os.path.join('PyBank','Analysis','analysis.txt')
 with open(output_file, 'w') as txtfile:
     results_file = csv.writer(txtfile, delimiter=',')
