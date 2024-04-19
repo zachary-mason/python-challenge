@@ -18,12 +18,7 @@ monthly_change = []
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     csv_header = next(csvreader)
-    #print(f"CSV Header: {csv_header}")
-
-    #test to see if able to read csv correctly
-    #for rows in csvreader:
-    #    print(rows)
-    
+   
     #had some help from Xpert learning assistance here
     # and the avg change/monthly change
     #counting the rows and total profit/loss 
@@ -40,20 +35,17 @@ with open(csvpath) as csvfile:
             if month_change > great_inc_change:
                 great_inc_change = month_change
                 great_inc_date = row[0]
-                #great_inc_change = row[1]
+                
             elif month_change < great_dec_change:
                 great_dec_change = month_change
                 great_dec_date = row[0]
-                #great_inc_change = row[1]
+                
 
         prev_prof_loss = int(row[1])
        
-
-
 #average monthly change set up and round to 2 decimal points
     avg_monthly_change = sum(monthly_change) / len(monthly_change)
-    rounded_avg_monthly_change = round(avg_monthly_change, 2)
-#print(f"{rounded_avg_monthly_change}")            
+    rounded_avg_monthly_change = round(avg_monthly_change, 2)          
 
 #printing to terminal
 print("Financial Analysis")
