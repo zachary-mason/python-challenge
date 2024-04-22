@@ -1,3 +1,4 @@
+#import the modules
 import os
 import csv
 
@@ -19,10 +20,8 @@ with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     csv_header = next(csvreader)
    
-    #had some help from Xpert learning assistance here
-    # and the avg change/monthly change
-    #counting the rows and total profit/loss 
-    #as it goes down the file    
+    #counting the rows/months, and calculating total profit/loss change
+     #as it goes down the file    
     for row in csvreader:
         row_count +=1
         total_net += int(row[1])
@@ -40,14 +39,13 @@ with open(csvpath) as csvfile:
                 great_dec_change = month_change
                 great_dec_date = row[0]
                 
-
         prev_prof_loss = int(row[1])
        
 #average monthly change set up and round to 2 decimal points
     avg_monthly_change = sum(monthly_change) / len(monthly_change)
     rounded_avg_monthly_change = round(avg_monthly_change, 2)          
 
-#printing to terminal
+#printing results to terminal
 print("Financial Analysis")
 print("----------------------------")
 print("Total Months: " + f"{row_count}")
@@ -56,10 +54,9 @@ print("Average Change: " + f"${rounded_avg_monthly_change}")
 print("Greatest Increase in Profits: " + f"{great_inc_date} (${great_inc_change})")
 print("Greatest Decrease in Profits: " + f"{great_dec_date} (${great_dec_change})")
 
-#module 3.2 slides/activities - first attempt
 #output text file with results matching module instructions
-output_file = os.path.join('PyBank','Analysis','analysis.txt')
-with open(output_file, 'w') as txtfile:
+results_file = os.path.join('PyBank','Analysis','analysis.txt')
+with open(results_file, 'w') as txtfile:
     results_file = csv.writer(txtfile, delimiter=',')
     results_file.writerow(["Financial Analysis"])
     results_file.writerow(["----------------------------"])
@@ -68,8 +65,3 @@ with open(output_file, 'w') as txtfile:
     results_file.writerow(["Average Change: " + f"${rounded_avg_monthly_change}"])
     results_file.writerow(["Greatest Increase in Profits: " + f"{great_inc_date}" + " (" + f"${great_inc_change}" + ")"])
     results_file.writerow(["Greatest Decrease in Profits: " + f"{great_dec_date}" + " (" + f"${great_dec_change}" + ")"])
-
-#printing out all to check results shown on the assignment
-#print(f"Total Months: {row_count}")
-#print(f"Total: ${total_net}")
-#print(f"Average Change: ${rounded_avg_monthly_change}")

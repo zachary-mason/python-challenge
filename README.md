@@ -1,4 +1,11 @@
 # python-challenge
+
+#Utilized the Xpert learning Assistant tool to help with the debugging a few lines
+    #PyBank calculating the change per month and finding/storing the full candidate list on pypoll
+
+#Troubleshooting/debugging session with Hannah,Dan and Nic for a few areas on both scripts
+    #candidate list troubleshoot group
+
 Module 3 Challenge
 Background
 It's time to put away the Excel sheet and enter the world of programming with Python. In this assignment, you'll use the concepts you've learned to complete two Python challenges, PyBank and PyPoll. Both tasks present a real-world situation where your newly developed Python scripting skills come in handy.
